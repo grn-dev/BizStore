@@ -8,4 +8,11 @@
     <Folder Include="wwwroot\fonts\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Core.Contract\Core.Contract.csproj" />
+    <ProjectReference Include="..\Core.Domian\Core.Domian.csproj" />
+    <ProjectReference Include="..\Infrastructures.Dal\Infrastructures.Dal.csproj" />
+    <ProjectReference Include="..\Service.AppService\Service.AppService.csproj" />
+  </ItemGroup>
+
 </Project>

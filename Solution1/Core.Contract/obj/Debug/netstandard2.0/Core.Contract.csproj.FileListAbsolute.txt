@@ -7,3 +7,6 @@ D:\Git myproject\BizStore\Solution1\Core.Contract\obj\Debug\netstandard2.0\Core.
 D:\Git myproject\BizStore\Solution1\Core.Contract\obj\Debug\netstandard2.0\Core.Contract.AssemblyInfo.cs
 D:\Git myproject\BizStore\Solution1\Core.Contract\obj\Debug\netstandard2.0\Core.Contract.dll
 D:\Git myproject\BizStore\Solution1\Core.Contract\obj\Debug\netstandard2.0\Core.Contract.pdb
+D:\Git myproject\BizStore\Solution1\Core.Contract\bin\Debug\netstandard2.0\Core.Domian.dll
+D:\Git myproject\BizStore\Solution1\Core.Contract\bin\Debug\netstandard2.0\Core.Domian.pdb
+D:\Git myproject\BizStore\Solution1\Core.Contract\obj\Debug\netstandard2.0\Core.Contract.csproj.CopyComplete

@@ -2,8 +2,13 @@ D:\Git myproject\BizStore\Solution1\Infrastructures.Dal\bin\Debug\netstandard2.0
 D:\Git myproject\BizStore\Solution1\Infrastructures.Dal\bin\Debug\netstandard2.0\Infrastructures.Dal.dll
 D:\Git myproject\BizStore\Solution1\Infrastructures.Dal\bin\Debug\netstandard2.0\Infrastructures.Dal.pdb
 D:\Git myproject\BizStore\Solution1\Infrastructures.Dal\obj\Debug\netstandard2.0\Infrastructures.Dal.csprojAssemblyReference.cache
-D:\Git myproject\BizStore\Solution1\Infrastructures.Dal\obj\Debug\netstandard2.0\Infrastructures.Dal.csproj.CoreCompileInputs.cache
 D:\Git myproject\BizStore\Solution1\Infrastructures.Dal\obj\Debug\netstandard2.0\Infrastructures.Dal.AssemblyInfoInputs.cache
 D:\Git myproject\BizStore\Solution1\Infrastructures.Dal\obj\Debug\netstandard2.0\Infrastructures.Dal.AssemblyInfo.cs
 D:\Git myproject\BizStore\Solution1\Infrastructures.Dal\obj\Debug\netstandard2.0\Infrastructures.Dal.dll
 D:\Git myproject\BizStore\Solution1\Infrastructures.Dal\obj\Debug\netstandard2.0\Infrastructures.Dal.pdb
+D:\Git myproject\BizStore\Solution1\Infrastructures.Dal\bin\Debug\netstandard2.0\Core.Contract.dll
+D:\Git myproject\BizStore\Solution1\Infrastructures.Dal\bin\Debug\netstandard2.0\Core.Domian.dll
+D:\Git myproject\BizStore\Solution1\Infrastructures.Dal\bin\Debug\netstandard2.0\Core.Contract.pdb
+D:\Git myproject\BizStore\Solution1\Infrastructures.Dal\bin\Debug\netstandard2.0\Core.Domian.pdb
+D:\Git myproject\BizStore\Solution1\Infrastructures.Dal\obj\Debug\netstandard2.0\Infrastructures.Dal.csproj.CopyComplete
+D:\Git myproject\BizStore\Solution1\Infrastructures.Dal\obj\Debug\netstandard2.0\Infrastructures.Dal.csproj.CoreCompileInputs.cache
