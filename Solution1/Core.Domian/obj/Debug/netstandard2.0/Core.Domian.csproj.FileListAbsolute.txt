@@ -4,3 +4,6 @@ D:\Git myproject\BizStore\Solution1\Core.Domian\obj\Debug\netstandard2.0\Core.Do
 D:\Git myproject\BizStore\Solution1\Core.Domian\obj\Debug\netstandard2.0\Core.Domian.AssemblyInfoInputs.cache
 D:\Git myproject\BizStore\Solution1\Core.Domian\obj\Debug\netstandard2.0\Core.Domian.AssemblyInfo.cs
 D:\Git myproject\BizStore\Solution1\Core.Domian\obj\Debug\netstandard2.0\Core.Domian.csproj.CoreCompileInputs.cache
+D:\Git myproject\BizStore\Solution1\Core.Domian\bin\Debug\netstandard2.0\Core.Domian.pdb
+D:\Git myproject\BizStore\Solution1\Core.Domian\obj\Debug\netstandard2.0\Core.Domian.dll
+D:\Git myproject\BizStore\Solution1\Core.Domian\obj\Debug\netstandard2.0\Core.Domian.pdb
