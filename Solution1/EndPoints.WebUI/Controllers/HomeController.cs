@@ -6,21 +6,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using EndPoints.WebUI.Models;
+using Core.Contract;
 
 namespace EndPoints.WebUI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IPruductRepo RepoPrc;
+        public HomeController(IPruductRepo pruduct)
         {
-            _logger = logger;
+            RepoPrc = pruduct;
         }
+
+         
 
         public IActionResult Index()
         {
-            return View();
+            var pr=RepoPrc.GetAll();
+            var fg=pr.FirstOrDefault();
+            return View(fg);
+ 
         }
 
         public IActionResult Privacy()

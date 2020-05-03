@@ -9,7 +9,8 @@ namespace Core.Contract
     {
         
         TEntity Get(int id);
-        List<TEntity> GetAll();
+        //List<TEntity> GetAll();
+        IQueryable<TEntity> GetAll();
         TEntity Add(TEntity entity);
         void Delete(int id);
         bool Update(TEntity entity);

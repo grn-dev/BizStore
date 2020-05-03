@@ -10,9 +10,9 @@ namespace Core.Domian
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
 
-        //public int CategoryId { get; set; }
-        //public Category category { get; set; }
-
-        //public List<Category> categories { get; set; }
+         //public int CategoryId { get; set; }
+         //public Category category { get; set; }
+         
+         //public List<Category> categories { get; set; }
     }
 }
