@@ -23,7 +23,7 @@ namespace EndPoints.WebUI.Controllers
         public IActionResult Index()
         {
             var pr=RepoPrc.GetAll();
-            var fg=pr.FirstOrDefault();
+            var fg = pr.ToList();
             return View(fg);
  
         }
