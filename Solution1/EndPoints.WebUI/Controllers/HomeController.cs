@@ -20,9 +20,9 @@ namespace EndPoints.WebUI.Controllers
 
          
 
-        public IActionResult Index()
+        public IActionResult Index(int pn=1)
         {
-            var pr=RepoPrc.GetAll();
+            var pr=RepoPrc.GetProducts(2, pn);
             var fg = pr.ToList();
             return View(fg);
  

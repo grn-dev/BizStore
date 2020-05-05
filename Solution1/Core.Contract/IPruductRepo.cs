@@ -8,7 +8,7 @@ namespace Core.Contract
     public interface IPruductRepo:IRepository<Product>
     {
         int TotalCount(string category);
-        //List<Product> GetProducts(string category, int pageSize = 4, int pageNumber = 1);
-         
+        List<Product> GetProducts( int pageSize = 4, int pageNumber = 1);//string category,
+
     }
 }
