@@ -1,0 +1,59 @@
+﻿@model ProductsListViewModel
+
+<div class="products-box">
+    <div class="container">
+
+        <div class="row special-list">
+
+            @foreach (var item in Model.Products)
+            {
+
+                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Sale</p>
+                            </div>
+                            <img src=@item.Image class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart" href="#">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                            <h4>@item.Description</h4>
+                            <h4>@item.Category</h4>
+                            <h5>@item.Price ریال</h5>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+
+        </div>
+
+        @*pageing*@
+
+
+        @*<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
+                 page-class="btn" page-class-normal="btn-secondary"
+                 page-class-selected="btn-primary"
+                 class="btn-group pull-right m-1">
+            </div>*@
+
+        <div>
+        @for (int gopagei = 0; gopagei <= Model.PagingInfo.TotalPages; gopagei++)
+        {
+            var classname = gopagei == Model.PagingInfo.CurrentPage ? "btn-primary" : "btn-secondary";
+            <a asp-action="Index"  asp-controller="Prouduct" asp-route-id="@gopagei" class="btn @classname" > @gopagei </a>
+        }
+        </div>
+
+         
+    </div>
+</div>

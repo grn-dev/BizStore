@@ -1,12 +1,12 @@
 D:\Git myproject\BizStore\Solution1\Core.Contract\bin\Debug\netstandard2.0\Core.Contract.deps.json
 D:\Git myproject\BizStore\Solution1\Core.Contract\bin\Debug\netstandard2.0\Core.Contract.dll
 D:\Git myproject\BizStore\Solution1\Core.Contract\bin\Debug\netstandard2.0\Core.Contract.pdb
+D:\Git myproject\BizStore\Solution1\Core.Contract\bin\Debug\netstandard2.0\Core.Domian.dll
+D:\Git myproject\BizStore\Solution1\Core.Contract\bin\Debug\netstandard2.0\Core.Domian.pdb
 D:\Git myproject\BizStore\Solution1\Core.Contract\obj\Debug\netstandard2.0\Core.Contract.csprojAssemblyReference.cache
 D:\Git myproject\BizStore\Solution1\Core.Contract\obj\Debug\netstandard2.0\Core.Contract.csproj.CoreCompileInputs.cache
 D:\Git myproject\BizStore\Solution1\Core.Contract\obj\Debug\netstandard2.0\Core.Contract.AssemblyInfoInputs.cache
 D:\Git myproject\BizStore\Solution1\Core.Contract\obj\Debug\netstandard2.0\Core.Contract.AssemblyInfo.cs
+D:\Git myproject\BizStore\Solution1\Core.Contract\obj\Debug\netstandard2.0\Core.Contract.csproj.CopyComplete
 D:\Git myproject\BizStore\Solution1\Core.Contract\obj\Debug\netstandard2.0\Core.Contract.dll
 D:\Git myproject\BizStore\Solution1\Core.Contract\obj\Debug\netstandard2.0\Core.Contract.pdb
-D:\Git myproject\BizStore\Solution1\Core.Contract\bin\Debug\netstandard2.0\Core.Domian.dll
-D:\Git myproject\BizStore\Solution1\Core.Contract\bin\Debug\netstandard2.0\Core.Domian.pdb
-D:\Git myproject\BizStore\Solution1\Core.Contract\obj\Debug\netstandard2.0\Core.Contract.csproj.CopyComplete

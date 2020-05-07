@@ -1,6 +1,6 @@
 ﻿using Core.Contract;
 using Core.Domian;
-using Core.Contract;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,10 +24,15 @@ namespace Infrastructures.Dal.Repository
             return ctx.Products.Include(c => c.Category).Skip(pageSize*(pageNumber-1)).Take(pageSize).ToList();
         }
 
-        public int TotalCount(string category)
+        public int TotalCount()//page/4 ,categori
         {
-            throw new NotImplementedException();
+            return ctx.Products.Count();
         }
+
+        //public int TotalCount(string category)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
      
 }
