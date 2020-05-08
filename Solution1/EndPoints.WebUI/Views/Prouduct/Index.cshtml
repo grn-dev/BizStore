@@ -25,8 +25,8 @@
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4>@item.Description</h4>
-                            <h4>@item.Category</h4>
+                            <h4>@item.ProductID</h4>
+                            <h4>@item.Name</h4>
                             <h5>@item.Price ریال</h5>
                         </div>
                     </div>
@@ -37,23 +37,32 @@
 
         </div>
 
-        @*pageing*@
+        @*pageing
+
+        asp-route-pn*@
 
 
         @*<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
-                 page-class="btn" page-class-normal="btn-secondary"
-                 page-class-selected="btn-primary"
-                 class="btn-group pull-right m-1">
-            </div>*@
+             page-class="btn" page-class-normal="btn-secondary"
+             page-class-selected="btn-primary"
+             class="btn-group pull-right m-1">
+        </div>*@
 
         <div>
-        @for (int gopagei = 0; gopagei <= Model.PagingInfo.TotalPages; gopagei++)
-        {
-            var classname = gopagei == Model.PagingInfo.CurrentPage ? "btn-primary" : "btn-secondary";
-            <a asp-action="Index"  asp-controller="Prouduct" asp-route-id="@gopagei" class="btn @classname" > @gopagei </a>
-        }
+            @for (int gopagei = 1; gopagei <= Model.PagingInfo.TotalPages; gopagei++)
+            {
+                var classname = gopagei == Model.PagingInfo.CurrentPage ? "btn-primary" : "btn-secondary";
+                <a asp-action="Index" asp-controller="Prouduct" asp-route-pn="@gopagei" class="btn @classname"> @gopagei </a>
+            }
         </div>
 
-         
+        @*@for (int gopagei = 1; gopagei <= Model.PagingInfo.TotalPages; gopagei++)
+        {
+            var classname = gopagei == Model.PagingInfo.CurrentPage ? "btn-primary" : "btn-secondary";
+            string url = "page" + @gopagei;
+            <a asp-action="Index" asp-controller="Prouduct" asp-route-id="@url" class="btn @classname"> @gopagei </a>
+        }*@
+
+
     </div>
 </div>

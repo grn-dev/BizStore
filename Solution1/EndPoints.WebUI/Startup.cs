@@ -27,7 +27,7 @@ namespace EndPoints.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews(); 
+            services.AddControllersWithViews();
             services.AddDbContext<BizContext>(options => options.UseSqlServer(Configuration.GetConnectionString("storeDb")));
             services.AddScoped<IPruductRepo, ProductRepository>();
         }
@@ -52,13 +52,23 @@ namespace EndPoints.WebUI
 
             app.UseAuthorization();
 
+            //app.UseMvc(ru =>
+            //ru.MapRoute(name: null,
+            //template: "{{controller=Home}/{action=Index}/{id?}}")
+            //);   
+
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "product",
+                    pattern: "{controller=Prouduct}/{action=Index}/{id}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+
         }
     }
 }
-   

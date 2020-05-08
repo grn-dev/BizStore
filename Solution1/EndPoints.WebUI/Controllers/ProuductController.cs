@@ -20,9 +20,12 @@ namespace EndPoints.WebUI.Controllers
         }
 
 
+        //[Route("api/[controller]/[action]")]
         public IActionResult Index(int pn = 1)
         {
-            var pr = RepoPrc.GetProducts(3, pn).ToList();
+            //?pn=2
+            int showpage = 3;
+            var pr = RepoPrc.GetProducts(showpage, pn).ToList();
 
             ProductsListViewModel prlvm = new ProductsListViewModel()
             {
@@ -31,8 +34,8 @@ namespace EndPoints.WebUI.Controllers
                 {
                     CurrentPage=pn,
                     TotalItems=RepoPrc.TotalCount(),
-                    ItemsPerPage=2
-                    
+                    ItemsPerPage= showpage
+
                 },
                 //CurrentCategory=
             };

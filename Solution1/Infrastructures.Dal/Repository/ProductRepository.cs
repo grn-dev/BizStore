@@ -19,7 +19,7 @@ namespace Infrastructures.Dal.Repository
 
         
          
-        public List<Product> GetProducts(int pageSize = 4, int pageNumber = 1)
+        public List<Product> GetProducts(int pageSize = 4, int pageNumber = 2)
         {
             return ctx.Products.Include(c => c.Category).Skip(pageSize*(pageNumber-1)).Take(pageSize).ToList();
         }
