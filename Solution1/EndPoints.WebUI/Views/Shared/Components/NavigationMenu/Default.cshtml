@@ -1,0 +1,40 @@
+﻿@model NavigationMenuViewModel
+
+
+    <li class="dropdown megamenu-fw">
+        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
+        <ul class="dropdown-menu megamenu-content" role="menu">
+            <li>
+                <div class="row">
+
+                    @foreach (var item in Model.Categories)
+                    {
+                        var className = item.CategoryName == Model.CurentCategory ? "text-danger" : "";
+
+                        <a asp-action="Index" asp-controller="Prouduct" asp-route-category="@item.CategoryName" 
+                           
+                           asp-route-pageNumber="1" class="list-group-item className">@item.CategoryName</a>
+
+                        <div class="col-menu col-md-3">
+                            <h6 class="title">Top</h6>
+                            <div class="content">
+                                <ul class="menu-col">
+                                    <li><a href="shop.html">Jackets</a></li>
+                                    <li><a href="shop.html">Shirts</a></li>
+                                    <li><a href="shop.html">Sweaters & Cardigans</a></li>
+                                    <li><a href="shop.html">T-shirts</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    }
+
+
+
+                    <!-- end col-3 -->
+                    <!-- end col-3 -->
+                    <!-- end col-3 -->
+                </div>
+                <!-- end row -->
+            </li>
+        </ul>
+    </li>
