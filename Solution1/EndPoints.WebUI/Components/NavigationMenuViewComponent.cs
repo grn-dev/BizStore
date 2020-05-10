@@ -5,14 +5,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EndPoints.WebUI.Models.Categories;
+using Core.Contract;
 
 namespace EndPoints.WebUI.Components
 {
     public class NavigationMenuViewComponent: ViewComponent
     {
-        private readonly CategoriRepo _categoryRepository;
+        private readonly ICategoriRepo _categoryRepository;
 
-        public NavigationMenuViewComponent(CategoriRepo categoryRepository)
+        public NavigationMenuViewComponent(ICategoriRepo categoryRepository)
         {
             _categoryRepository = categoryRepository;
         }

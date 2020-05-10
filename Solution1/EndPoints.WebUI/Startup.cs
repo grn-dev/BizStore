@@ -28,7 +28,8 @@ namespace EndPoints.WebUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<BizContext>(options => options.UseSqlServer(Configuration.GetConnectionString("storeDb")));
+            services.AddDbContext<BizContext>(options => options.UseSqlServer
+            (Configuration.GetConnectionString("storeDb")));
             services.AddScoped<IPruductRepo, ProductRepository>();
             services.AddScoped<ICategoriRepo, CategoriRepo>();
         }

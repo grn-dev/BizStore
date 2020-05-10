@@ -1,7 +1,6 @@
 ﻿@model NavigationMenuViewModel
 
-
-    <li class="dropdown megamenu-fw">
+<li class="dropdown megamenu-fw">
         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
         <ul class="dropdown-menu megamenu-content" role="menu">
             <li>
@@ -11,18 +10,17 @@
                     {
                         var className = item.CategoryName == Model.CurentCategory ? "text-danger" : "";
 
-                        <a asp-action="Index" asp-controller="Prouduct" asp-route-category="@item.CategoryName" 
-                           
-                           asp-route-pageNumber="1" class="list-group-item className">@item.CategoryName</a>
-
+                        <a asp-action="Index" asp-controller="Prouduct" asp-route-category="@item.CategoryName"
+                           asp-route-pageNumber="1" class="list-group-item className">@item.CategoryName sub</a>
+                         
                         <div class="col-menu col-md-3">
-                            <h6 class="title">Top</h6>
+                            @*<h1 class="title">@item.CategoryName sub</h1>*@
                             <div class="content">
                                 <ul class="menu-col">
-                                    <li><a href="shop.html">Jackets</a></li>
-                                    <li><a href="shop.html">Shirts</a></li>
-                                    <li><a href="shop.html">Sweaters & Cardigans</a></li>
-                                    <li><a href="shop.html">T-shirts</a></li>
+                                    <li><a href="shop.html">@item.CategoryName</a></li>
+                                    <li><a href="shop.html">@item.CategoryName</a></li>
+                                    <li><a href="shop.html">@item.CategoryName</a></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -38,3 +36,6 @@
             </li>
         </ul>
     </li>
+
+
+     
