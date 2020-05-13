@@ -22,7 +22,7 @@ namespace EndPoints.WebUI.Controllers
 
         public IActionResult Index(int pn=1)
         {
-            var pr=RepoPrc.GetProducts(4, pn);
+            var pr=RepoPrc.GetProducts(4, pn,"");
             var fg = pr.ToList();
             return View(fg);
  

@@ -62,8 +62,20 @@ namespace EndPoints.WebUI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "product",
-                    pattern: "{controller=Prouduct}/{action=Index}/{id}");
+                name: null,
+                pattern: "{category}/Page{pn:int}",
+                defaults: new { controller = "Prouduct", action = "List" }
+                );
+
+
+                endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "Page{pn:int}",
+                defaults: new {
+                    controller = "Prouduct",
+                    action = "List",
+                    productPage = 1
+                });
 
                 endpoints.MapControllerRoute(
                     name: "default",

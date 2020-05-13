@@ -7,6 +7,6 @@ namespace Core.Contract
 {
     public interface ICategoriRepo:IRepository<Category>
     {
-
+        Category GetByName(String catname);
     }
 }

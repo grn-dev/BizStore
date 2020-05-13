@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace Infrastructures.Dal.Repository
 {
-    public class ProductRepository: BaseRepository<Product>, IPruductRepo
+    public class ProductRepository : BaseRepository<Product>, IPruductRepo
     {
         private readonly BizContext ctx;
         public ProductRepository(BizContext dbContext) : base(dbContext)
@@ -17,16 +17,19 @@ namespace Infrastructures.Dal.Repository
             ctx = dbContext;
         }
 
-        
-         
-        public List<Product> GetProducts(int pageSize = 4, int pageNumber = 2)
+        public List<Product> GetProducts(int pageSize = 4, int pageNumber = 1, string category = null)
         {
-            return ctx.Products.Include(c => c.Category).Skip(pageSize*(pageNumber-1)).Take(pageSize).ToList();
+            return ctx.Products.
+                Where(c => string.IsNullOrWhiteSpace(category) || c.Category.CategoryName == category).
+                Include(c => c.Category).
+                Skip(pageSize * (pageNumber - 1)).
+                Take(pageSize).ToList();
+
         }
 
-        public int TotalCount()//page/4 ,categori
+        public int TotalCount(string category = null)//page/4 ,categori
         {
-            return ctx.Products.Count();
+            return ctx.Products.Where(c => string.IsNullOrWhiteSpace(category) || c.Category.CategoryName == category).Count();
         }
 
         //public int TotalCount(string category)
@@ -34,5 +37,5 @@ namespace Infrastructures.Dal.Repository
         //    throw new NotImplementedException();
         //}
     }
-     
+
 }

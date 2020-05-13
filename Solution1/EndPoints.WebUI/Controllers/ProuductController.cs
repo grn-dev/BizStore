@@ -19,29 +19,35 @@ namespace EndPoints.WebUI.Controllers
             RepoPrc = pruduct;
         }
 
+         
 
-        //[Route("api/[controller]/[action]")]
-        public IActionResult Index(int pn = 1)
+        public IActionResult index(string catname,int pn = 1)
         {
             //?pn=2
             int showpage = 3;
-            var pr = RepoPrc.GetProducts(showpage, pn).ToList();
+            var pr = RepoPrc.GetProducts(showpage, pn, catname).ToList();
 
             ProductsListViewModel prlvm = new ProductsListViewModel()
             {
                 Products = pr,
                 PagingInfo = new Models.Commons.PagingInfo
                 {
-                    CurrentPage=pn,
-                    TotalItems=RepoPrc.TotalCount(),
-                    ItemsPerPage= showpage
+                    CurrentPage = pn,
+                    TotalItems = RepoPrc.TotalCount(catname),
+                    ItemsPerPage = showpage
 
                 },
-                //CurrentCategory=
+                CurrentCategory= catname
             };
 
 
             return View(prlvm);
         }
+
+
+         
     }
+
+
 }
+ 

@@ -39,29 +39,30 @@
 
         @*pageing
 
-        asp-route-pn*@
+            asp-route-pn*@
 
 
         @*<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
-             page-class="btn" page-class-normal="btn-secondary"
-             page-class-selected="btn-primary"
-             class="btn-group pull-right m-1">
-        </div>*@
+                 page-class="btn" page-class-normal="btn-secondary"
+                 page-class-selected="btn-primary"
+                 class="btn-group pull-right m-1">
+            </div>*@
 
         <div>
             @for (int gopagei = 1; gopagei <= Model.PagingInfo.TotalPages; gopagei++)
             {
+                //string url = "page" + @gopagei;
                 var classname = gopagei == Model.PagingInfo.CurrentPage ? "btn-primary" : "btn-secondary";
-                <a asp-action="Index" asp-controller="Prouduct" asp-route-pn="@gopagei" class="btn @classname"> @gopagei </a>
+                <a asp-action="index" asp-controller="Prouduct" asp-route-pn="@gopagei"  asp-route-catname="@Model.CurrentCategory" class="btn @classname"> @gopagei </a>
             }
         </div>
 
         @*@for (int gopagei = 1; gopagei <= Model.PagingInfo.TotalPages; gopagei++)
-        {
-            var classname = gopagei == Model.PagingInfo.CurrentPage ? "btn-primary" : "btn-secondary";
-            string url = "page" + @gopagei;
-            <a asp-action="Index" asp-controller="Prouduct" asp-route-id="@url" class="btn @classname"> @gopagei </a>
-        }*@
+            {
+                var classname = gopagei == Model.PagingInfo.CurrentPage ? "btn-primary" : "btn-secondary";
+                string url = "page" + @gopagei;
+                <a asp-action="Index" asp-controller="Prouduct" asp-route-id="@url" class="btn @classname"> @gopagei </a>
+            }*@
 
         <div page-model="@Model.PagingInfo" page-action="List" page-classes-enabled="true"
              page-class="btn" page-class-normal="btn-secondary"
@@ -69,5 +70,6 @@
              class="btn-group pull-right m-1">
         </div>
 
-    </div>
+         <div page-mo>
+</div>
 </div>

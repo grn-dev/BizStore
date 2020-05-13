@@ -11,6 +11,6 @@ namespace EndPoints.WebUI.Models.Producte
     {
         public List<Product> Products { get; set; }
         public PagingInfo PagingInfo { get; set; }
-        //public string CurrentCategory { get; set; }
+        public string CurrentCategory { get; set; }
     }
 }
