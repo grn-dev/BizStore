@@ -63,8 +63,8 @@ namespace EndPoints.WebUI
             {
                 endpoints.MapControllerRoute(
                 name: null,
-                pattern: "{category}/Page{pn:int}",
-                defaults: new { controller = "Prouduct", action = "List" }
+                pattern: "{catname}/Page{pn:int}",
+                defaults: new { controller = "Prouduct", action = "index" }
                 );
 
 

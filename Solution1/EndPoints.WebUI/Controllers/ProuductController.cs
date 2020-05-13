@@ -44,8 +44,31 @@ namespace EndPoints.WebUI.Controllers
             return View(prlvm);
         }
 
+        public IActionResult list(string catname, int pn = 1)
+        {
+            //?pn=2
+            int showpage = 3;
+            var pr = RepoPrc.GetProducts(showpage, pn, catname).ToList();
 
-         
+            ProductsListViewModel prlvm = new ProductsListViewModel()
+            {
+                Products = pr,
+                PagingInfo = new Models.Commons.PagingInfo
+                {
+                    CurrentPage = pn,
+                    TotalItems = RepoPrc.TotalCount(catname),
+                    ItemsPerPage = showpage
+
+                },
+                CurrentCategory = catname
+            };
+
+
+            return View(prlvm);
+        }
+
+
+
     }
 
 
