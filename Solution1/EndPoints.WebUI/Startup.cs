@@ -27,6 +27,10 @@ namespace EndPoints.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddSession();
+            services.AddMemoryCache();
+
             services.AddControllersWithViews();
             services.AddDbContext<BizContext>(options => options.UseSqlServer
             (Configuration.GetConnectionString("storeDb")));
@@ -50,8 +54,9 @@ namespace EndPoints.WebUI
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();//id ke user pass mide
+            
             app.UseRouting();
-
             app.UseAuthorization();
 
             //app.UseMvc(ru =>
