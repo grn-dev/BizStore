@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.Domian;
 using System.Threading.Tasks;
 using Core.Contract;
 using Infrastructures.Dal;
@@ -30,6 +31,8 @@ namespace EndPoints.WebUI
 
             services.AddSession();
             services.AddMemoryCache();
+
+            //services.AddScoped(sp => Cart.GetCar(sp));
 
             services.AddControllersWithViews();
             services.AddDbContext<BizContext>(options => options.UseSqlServer
