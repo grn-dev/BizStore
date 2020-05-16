@@ -19,20 +19,20 @@ namespace EndPoints.WebUI.Controllers
     public class CartController : Controller
     {
         // GET: /<controller>/
-        
+
         private IPruductRepo repository;
         //private Cart _cart;
 
-        public CartController(IPruductRepo repo  )//, Cart cart)
+        public CartController(IPruductRepo repo)//, Cart cart)
         {
             repository = repo;
             //_cart = new Cart();
         }
         public ViewResult Index()
         {
-            return View(new Cart
+            return View(new CartIndexViewModel
             {
-                //ReturnUrl = returnUrl
+                Cart = GetCart(),
             });
 
         }
@@ -40,7 +40,7 @@ namespace EndPoints.WebUI.Controllers
         public RedirectToActionResult AddToCart(int productId)// , string returnUrl)
         {
             var returnUrl = "Prouduct";
-             
+
             Product product = repository.Get(productId);
             if (product != null)
             {
@@ -48,7 +48,7 @@ namespace EndPoints.WebUI.Controllers
                 cart.AddItem(product, 1);
                 savecart(cart);
             }
-            return RedirectToAction("Index", new { returnUrl });
+            return RedirectToAction("Index");
         }
         public RedirectToActionResult RemoveFromCart(int productId,
         string returnUrl)
@@ -71,7 +71,7 @@ namespace EndPoints.WebUI.Controllers
 
             return crt;
         }
-         
+
 
         private void savecart(Cart cart)
         {
@@ -80,5 +80,5 @@ namespace EndPoints.WebUI.Controllers
         }
 
     }
-    
+
 }
