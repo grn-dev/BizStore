@@ -1,116 +1,133 @@
 ﻿@model EndPoints.WebUI.Models.Carts.CartIndexViewModel
 
 
-    <div class="cart-box-main">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="table-main table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>تصویر</th>
-                                    <th>نام کالا</th>
-                                    <th>قیمت</th>
-                                    <th>تعداد</th>
-                                    <th>قیمت نهایی</th>
-                                    <th>حذف</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var item in Model.Cart.Lines)
-                                {
+<div class="cart-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-main table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>تصویر</th>
+                                <th>نام کالا</th>
+                                <th>قیمت</th>
+                                <th>تعداد</th>
+                                <th>قیمت نهایی</th>
+                                <th>عملیات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Cart.Lines)
+                            {
 
 
                                 <tr>
                                     <td class="thumbnail-img">
                                         <a href="#">
-                                            <img class="img-fluid"  src=@item.Product.Image alt="" />
+                                            <img class="img-fluid" src=@item.Product.Image alt="" />
                                         </a>
                                     </td>
                                     <td class="name-pr">
                                         <a href="#">
-                                             @item.Product.Name
+                                            @item.Product.Name
                                         </a>
                                     </td>
                                     <td class="price-pr">
                                         <p>@item.Product.Price</p>
                                     </td>
                                     <td class="quantity-box">
-                                        <input id="sag" type="number" size="2" value="1" min="0" step="1" class="c-input-text qty text">
-                                         
+                                        <p id="totalprice"> @item.Quantity</p>
+
                                     </td>
+
 
                                     <td class="total-pr">
                                         <p id="totalprice"> @((item.Quantity * item.Product.Price).ToString("c"))</p>
                                     </td>
-                                    <td class="remove-pr">
-                                        <a href="#">
-                                            <i class="fas fa-times"></i>
-                                        </a>
+                                    <td>
+                                        <form asp-action="RemoveFromCart" method="post">
+                                            <input type="hidden" name="ProductID"
+                                                   value="@item.Product.ProductID" />
+                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                حذف
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form asp-action="AddToCart" method="post">
+                                            <input type="hidden" name="ProductID"
+                                                   value="@item.Product.ProductID" />
+                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                اضافه کردن
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
+                            }
+                        </tbody>
+                    </table>
                 </div>
             </div>
-
-             
-
-            <div class="row my-5">
-                <div class="col-lg-8 col-sm-12"></div>
-                <div class="col-lg-4 col-sm-12">
-                    <div class="order-box">
-                         
-                        <div class="d-flex gr-total">
-                            <h5>Grand Total</h5>
-                            <div class="ml-auto h5"> @Model.Cart.ComputeTotalValue().ToString("c") </div>
-                        </div>
-                         
-                    </div>
-                </div>
-                <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">نهایی کردن خرید</a> </div>
-            </div>
-
         </div>
+
+
+
+        <div class="row my-5">
+            <div class="col-lg-8 col-sm-12"></div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="order-box">
+
+                    <div class="d-flex gr-total">
+                        <h5>Grand Total</h5>
+                        <div class="ml-auto h5"> @Model.Cart.ComputeTotalValue().ToString("c") </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-12 d-flex shopping-box"><a href="checkout.html" class="ml-auto btn hvr-hover">نهایی کردن خرید</a> </div>
+        </div>
+
     </div>
+</div>
 
 
 
-    <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-     
-    <script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script>
 
         $(document).ready(function () {
-            $('#sag').click(function () {
-                myFunction();
-                 
-            });
+            //$('#sag').click(function () {
+            //    myFunction();
+
+            //});
         });
 
 
         function myFunction() {
-            //alert("Page is loaded");
+
+            val2 = "2";
 
             $.ajax({
-                // edit to add steve's suggestion.
-                //url: "/ControllerName/ActionName",
-                url: '<%= Url.Action("AddToCart", "Cart") %>',
-                success: function (data) {
-                    // your data could be a View or Json or what ever you returned in your action method 
-                    // parse your data here
-                    alert(data);
-                }
-            });
+            type: "POST",
+            url: "@Url.Action("RemoveFromCart")",
+            data: {number1: val1},
+            dataType: "text",
+            success: function (msg) {
+                alert(msg);
+            },
+            error: function (req, status, error) {
+                alert(error);
+            }
+        });
 
             var tr=document.getElementById('sag').value;
             alert(tr)
             console.log(tr);
         }
-        
 
 
-    </script>
+
+</script>

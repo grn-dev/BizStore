@@ -48,7 +48,7 @@ namespace EndPoints.WebUI.Controllers
                 cart.AddItem(product, 1);
                 savecart(cart);
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Prouduct", new { });
         }
         public RedirectToActionResult RemoveFromCart(int productId,
         string returnUrl)
@@ -78,6 +78,8 @@ namespace EndPoints.WebUI.Controllers
             HttpContext.Session.SetJson("cart", cart);
 
         }
+
+
 
     }
 
