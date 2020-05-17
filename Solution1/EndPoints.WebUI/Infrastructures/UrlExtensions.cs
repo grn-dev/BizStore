@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace NikamoozStore.EndPoints.WebUI.Infrastructures
+namespace  EndPoints.WebUI.Infrastructures
 {
     public static class UrlExtensions
     {

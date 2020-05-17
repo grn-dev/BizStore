@@ -9,8 +9,8 @@ using EndPoints.WebUI.Models.Carts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
-using NikamoozStore.EndPoints.WebUI.Infrastructures;
-using NikamoozStore.EndPoints.WebUI.Models.Carts;
+using  EndPoints.WebUI.Infrastructures;
+using  EndPoints.WebUI.Models.Carts;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -68,19 +68,19 @@ namespace EndPoints.WebUI.Controllers
 
 
 
-        //private Cart GetCart()
-        //{
-        //    Cart crt = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+        private Cart GetCart()
+        {
+            Cart crt = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
 
-        //    return crt;
-        //}
+            return crt;
+        }
 
 
-        //private void savecart(Cart cart)
-        //{
-        //    HttpContext.Session.SetJson("cart", cart);
+        private void savecart(Cart cart)
+        {
+            HttpContext.Session.SetJson("cart", cart);
 
-        //}
+        }
 
 
 

@@ -2,13 +2,13 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json; 
-using NikamoozStore.EndPoints.WebUI.Infrastructures;
+using  EndPoints.WebUI.Infrastructures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NikamoozStore.EndPoints.WebUI.Models.Carts
+namespace  EndPoints.WebUI.Models.Carts
 {
     public class SessionCart:Cart
     {

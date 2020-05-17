@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NikamoozStore.EndPoints.WebUI.Infrastructures
+namespace EndPoints.WebUI.Infrastructures
 {
     public static class SessionExtensions
     {
