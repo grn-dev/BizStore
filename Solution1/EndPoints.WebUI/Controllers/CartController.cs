@@ -21,18 +21,19 @@ namespace EndPoints.WebUI.Controllers
         // GET: /<controller>/
 
         private IPruductRepo repository;
-        //private Cart _cart;
+         private Cart _cart;
 
-        public CartController(IPruductRepo repo)//, Cart cart)
+        public CartController(IPruductRepo repo , Cart cart)
         {
             repository = repo;
-            //_cart = new Cart();
+            _cart = cart;
         }
         public ViewResult Index()
         {
             return View(new CartIndexViewModel
             {
-                Cart = GetCart(),
+                //Cart = GetCart(),
+                Cart = _cart
             });
 
         }
@@ -44,9 +45,10 @@ namespace EndPoints.WebUI.Controllers
             Product product = repository.Get(productId);
             if (product != null)
             {
-                Cart cart = GetCart();
-                cart.AddItem(product, 1);
-                savecart(cart);
+                _cart.AddItem(product, 1);
+                //Cart cart = GetCart();
+                //cart.AddItem(product, 1);
+                //savecart(cart);
             }
             return RedirectToAction("Index", "Prouduct", new { });
         }
@@ -56,28 +58,29 @@ namespace EndPoints.WebUI.Controllers
             Product product = repository.Get(productId);
             if (product != null)
             {
-                Cart cart = GetCart();
-                cart.RemoveLine(product);
-                savecart(cart);
+                _cart.RemoveLine(product);
+                //Cart cart = GetCart();
+                //cart.RemoveLine(product);
+                //savecart(cart);
             }
             return RedirectToAction("Index", new { returnUrl });
         }
 
 
 
-        private Cart GetCart()
-        {
-            Cart crt = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+        //private Cart GetCart()
+        //{
+        //    Cart crt = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
 
-            return crt;
-        }
+        //    return crt;
+        //}
 
 
-        private void savecart(Cart cart)
-        {
-            HttpContext.Session.SetJson("cart", cart);
+        //private void savecart(Cart cart)
+        //{
+        //    HttpContext.Session.SetJson("cart", cart);
 
-        }
+        //}
 
 
 
