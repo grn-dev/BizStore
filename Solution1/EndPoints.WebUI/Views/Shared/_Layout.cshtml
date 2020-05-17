@@ -58,7 +58,7 @@
                         <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
 
-                        @*Categori*@  
+                        @*Categori*@
 
                         @await Component.InvokeAsync("NavigationMenu")
 
@@ -85,8 +85,10 @@
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         <li class="side-menu">
                             <a asp-action="index" asp-controller="cart">
-                                <i class="fa fa-shopping-bag"></i>
+                                <i class="fas fa-amazon fa-shopping-cart" ></i>
                                 @*<span class="badge">3</span>*@
+                                
+                                
                             </a>
                         </li>
                     </ul>
@@ -355,6 +357,7 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/5c37fb7505.js" crossorigin="anonymous"></script>
     <!-- ALL PLUGINS -->
     <script src="js/jquery.superslides.min.js"></script>
     <script src="js/bootstrap-select.js"></script>

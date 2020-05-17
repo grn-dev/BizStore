@@ -16,6 +16,7 @@ namespace NikamoozStore.EndPoints.WebUI.Models.Carts
         {
             ISession session = services.GetRequiredService<IHttpContextAccessor>()?
             .HttpContext.Session;
+
             SessionCart cart = session?.GetJson<SessionCart>("Cart")
             ?? new SessionCart();
             cart.Session = session;
