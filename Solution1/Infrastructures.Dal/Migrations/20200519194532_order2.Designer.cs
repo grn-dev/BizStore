@@ -4,14 +4,16 @@ using Infrastructures.Dal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infrastructures.Dal.Migrations
 {
     [DbContext(typeof(BizContext))]
-    partial class BizContextModelSnapshot : ModelSnapshot
+    [Migration("20200519194532_order2")]
+    partial class order2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

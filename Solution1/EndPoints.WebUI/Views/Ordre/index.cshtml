@@ -1,0 +1,113 @@
+﻿@model Core.Domian.Order
+ 
+<div class="cart-box-main">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-6 col-lg-6 mb-3">
+                <div class="checkout-address">
+                    
+                        <form asp-controller="Ordre" asp-action="index" method="post">
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label asp-for="Name">First name *</label>
+                                    <input type="text" class="form-control" asp-for="Name" placeholder="" value="" required>
+                                    <div class="invalid-feedback"> Valid first name is required. </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label asp-for="lasteName">Last name *</label>
+                                    <input type="text" class="form-control" asp-for="lasteName" placeholder="" value="" required>
+                                    <div class="invalid-feedback"> Valid last name is required. </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="Phonenumber">Phonenumber *</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" asp-for="Phonenumber" placeholder="" required>
+                                    <div class="invalid-feedback" style="width: 100%;"> Your username is required. </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="Email">Email Address *</label>
+                                <input type="email" class="form-control" asp-for="Email" placeholder="">
+                                <div class="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="Addres">Addres *</label>
+                                <input type="text" class="form-control" asp-for="Addres" placeholder="" required>
+                                <div class="invalid-feedback"> Please enter your shipping address. </div>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="Addres2">Addres2 *</label>
+                                <input type="text" class="form-control" asp-for="Addres2" placeholder="" required>
+                                <div class="invalid-feedback"> Please enter your shipping address. </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label asp-for="City">City *</label>
+                                <input type="text" class="form-control" asp-for="City" placeholder="" required>
+                                <div class="invalid-feedback"> Please enter your shipping address. </div>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="province">province *</label>
+                                <input type="text" class="form-control" asp-for="province" placeholder="" required>
+                                <div class="invalid-feedback"> Please enter your shipping address. </div>
+                            </div>
+                             
+
+
+                            <div class="text-center">
+                                    <input class="btn btn-primary" id="sag" type="submit" value="complete order" />
+                                </div>
+                             
+
+
+                        </form>
+                     
+
+                </div>
+            </div>
+             
+        </div>
+
+    </div>
+</div>
+ 
+
+
+<script>
+
+        $(document).ready(function () {
+            //$('#sag').click(function () {
+            //    myFunction();
+
+            //});
+        });
+
+
+        function myFunction() {
+
+            val2 = "2";
+
+            $.ajax({
+            type: "POST",
+            url: "@Url.Action("index")",
+            data: {number1: val1},
+            dataType: "text",
+            success: function (msg) {
+                alert(msg);
+            },
+            error: function (req, status, error) {
+                alert(error);
+            }
+        });
+
+            var tr=document.getElementById('sag').value;
+            alert(tr)
+            console.log(tr);
+        }
+
+
+
+</script>

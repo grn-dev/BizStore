@@ -10,6 +10,7 @@ namespace EndPoints.WebUI.Controllers
 {
     public class OrdreController : Controller
     {
+         
         private IOrderRepo repository;
         private Cart cart;
         public OrdreController(IOrderRepo repoService, Cart cartService)
@@ -17,14 +18,25 @@ namespace EndPoints.WebUI.Controllers
             repository = repoService;
             cart = cartService;
         }
-        public ViewResult Checkout()
+        public ViewResult index()
         {
-            return View(new Order());
+            return View(new Order()
+            { 
+                City="niavaran",
+                province="milan",
+                //Lines= cart.Lines.ToArray(),
+                Email="mahmoudsazbali@gmail.com",
+                Addres2 = "afsarinihe,20met",
+                Addres ="afsarinihe,20metri prlak"
+                
+            });
         }
 
         [HttpPost]
-        public IActionResult Checkout(Order order)
+        public IActionResult index(Order order)
         {
+            order.PaymentId = "";
+
             if (cart.Lines.Count() == 0)
             {
                 ModelState.AddModelError("", "Sorry, your cart is empty!");
@@ -39,6 +51,10 @@ namespace EndPoints.WebUI.Controllers
             }
             else
             {
+                //mihater
+                var errors = ModelState.Select(x => x.Value.Errors)
+                           .Where(y => y.Count > 0)
+                           .ToList();
                 return View(order);
             }
         }

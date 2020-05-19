@@ -10,27 +10,37 @@ namespace Core.Domian
         public int OrderID { get; set; }
        
         public ICollection<CartLine> Lines { get; set; }
+
         [Required(ErrorMessage = "Please enter a name")]
-        
         public string Name { get; set; }
-        [Required(ErrorMessage = "Please enter the first address line")]
+         
 
-        public string Phonenumber { get; set; }
+        [Required(ErrorMessage = "Please enter the lasteName line")]
+        public string lasteName { get; set; }
+        
+
         [Required(ErrorMessage = "لطفا شماره همراه را وارد نمایید")]
+        public string Phonenumber { get; set; }
+        
 
-        public string Email { get; set; }
         [Required(ErrorMessage = "لطفا ایمیل را وارد نمایید")]
+        public string Email { get; set; }
+        
 
-        public string City { get; set; }
         [Required(ErrorMessage = "Please enter a state name")]
+        public string City { get; set; }
+        
 
         public string province { get; set; }
 
+        [Required(ErrorMessage = "Please enter a Addres name")]
         public string Addres { get; set; }
-        [Required(ErrorMessage = "Please enter a city name")]
+        
 
+
+        [Required(ErrorMessage = "Please enter a Addres 2 name")]
         public string Addres2 { get; set; }
-        [Required(ErrorMessage = "Please enter a city name")]
+        
 
         //public string Zip { get; set; }
         //[Required(ErrorMessage = "Please enter a country name")]

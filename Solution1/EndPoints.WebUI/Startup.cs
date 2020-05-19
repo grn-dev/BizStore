@@ -43,6 +43,7 @@ namespace EndPoints.WebUI
             services.AddDbContext<BizContext>(options => options.UseSqlServer
             (Configuration.GetConnectionString("storeDb")));
             services.AddScoped<IPruductRepo, ProductRepository>();
+            services.AddScoped<IOrderRepo, OrderRepository>();
             services.AddScoped<ICategoriRepo, CategoriRepo>();
         }
 

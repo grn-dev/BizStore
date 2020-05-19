@@ -4,14 +4,16 @@ using Infrastructures.Dal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infrastructures.Dal.Migrations
 {
     [DbContext(typeof(BizContext))]
-    partial class BizContextModelSnapshot : ModelSnapshot
+    [Migration("20200519175806_order")]
+    partial class order
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -125,10 +127,6 @@ namespace Infrastructures.Dal.Migrations
 
                     b.Property<bool>("Shipped")
                         .HasColumnType("bit");
-
-                    b.Property<string>("lasteName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("province")
                         .IsRequired()
