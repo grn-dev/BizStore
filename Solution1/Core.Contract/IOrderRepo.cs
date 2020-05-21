@@ -14,5 +14,6 @@ namespace Core.Contract
 
         List<OrderHeader> Search(bool? Shipped);
         void Ship(int orderId);
+        Order GetWithOrderLine(int id);
     }
 }

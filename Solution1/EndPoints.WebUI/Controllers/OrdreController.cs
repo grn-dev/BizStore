@@ -27,7 +27,9 @@ namespace EndPoints.WebUI.Controllers
                 //Lines= cart.Lines.ToArray(),
                 Email="mahmoudsazbali@gmail.com",
                 Addres2 = "afsarinihe,20met",
-                Addres ="afsarinihe,20metri prlak"
+                Addres ="afsarinihe,20metri prlak",
+                lasteName="haj mahmoud",
+                Phonenumber="09121212123"
                 
             });
         }
@@ -60,11 +62,14 @@ namespace EndPoints.WebUI.Controllers
         }
         public IActionResult Completed(int id)
         {
-            var order = repository.Get(id);
+            //TODO Bank
+            //SHOW ORDER
+            var order = repository.GetWithOrderLine(id);
             if (order == null)
             {
                 return NotFound();
             }
+            //return View(order);
             return View(order);
         }
     }

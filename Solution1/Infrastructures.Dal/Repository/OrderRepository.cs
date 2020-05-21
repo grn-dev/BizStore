@@ -4,6 +4,7 @@ using Core.Contract;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructures.Dal.Repository
 {
@@ -13,6 +14,11 @@ namespace Infrastructures.Dal.Repository
         public OrderRepository(BizContext dbContext) : base(dbContext)
         {
             _ctx = dbContext;
+        }
+
+        public Order GetWithOrderLine(int id)
+        {
+            return _ctx.Orders.Include(c => c.Lines).ThenInclude(d => d.Product).FirstOrDefault(c => c.OrderID == id);
         }
 
         public void SaveOrder(Order order)

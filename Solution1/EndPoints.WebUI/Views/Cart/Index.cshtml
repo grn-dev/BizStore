@@ -49,7 +49,7 @@
                                         <form asp-action="RemoveFromCart" method="post">
                                             <input type="hidden" name="ProductID"
                                                    value="@item.Product.ProductID" />
-                                            <button type="submit" class="btn btn-sm btn-danger">
+                                            <button type="submit" class="fas fa-trash-alt">
                                                 حذف
                                             </button>
                                         </form>
@@ -58,8 +58,15 @@
                                         <form asp-action="AddToCart" method="post">
                                             <input type="hidden" name="ProductID"
                                                    value="@item.Product.ProductID" />
-                                            <button type="submit" class="btn btn-sm btn-danger">
+                                            <button type="submit" class="fas fa-plus-square">
                                                 اضافه کردن
+                                            </button>
+                                        </form>
+                                        <form asp-action="AddToCart" method="post">
+                                            <input type="hidden" name="ProductID"
+                                                   value="@item.Product.ProductID" />
+                                            <button type="submit" class="fas fa-minus-square">
+                                                 کم کردن
                                             </button>
                                         </form>
                                     </td>

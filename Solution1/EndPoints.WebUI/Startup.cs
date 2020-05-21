@@ -16,6 +16,7 @@ using Microsoft.Extensions.Hosting;
 using EndPoints.WebUI.Models.Carts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Service.AppService;
 
 namespace EndPoints.WebUI
 {
@@ -45,6 +46,7 @@ namespace EndPoints.WebUI
             services.AddScoped<IPruductRepo, ProductRepository>();
             services.AddScoped<IOrderRepo, OrderRepository>();
             services.AddScoped<ICategoriRepo, CategoriRepo>();
+            services.AddScoped<IPayment, payService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
