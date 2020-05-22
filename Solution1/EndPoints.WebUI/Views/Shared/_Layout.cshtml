@@ -363,11 +363,27 @@
 <script>
 
     $(document).ready(function () {
+        $("a").attr("dir", "rtl");
+        $("div").attr("dir", "rtl");
+        $("p").attr("dir", "rtl");
+        $("footer").attr("dir", "rtl");
+        $("ui").attr("dir", "rtl");
+        $("li").attr("dir", "rtl");
+        $("img").attr("dir", "rtl");
+        $("button").attr("dir", "rtl");
+        $("nav").attr("dir", "rtl");
 
+        $("h1").attr("dir", "rtl");
+        $("h2").attr("dir", "rtl");
+        $("h3").attr("dir", "rtl");
+        $("h4").attr("dir", "rtl");
+        $("h5").attr("dir", "rtl");
+        $("h6").attr("dir", "rtl");
+         
     });
 
     $("#SearchId").click(function () {
-
+        
         if ($('#tblsearchbtn').css('display') == 'none' || $('#tblsearchbtn').css("visibility") == "hidden") {
 
             $('#tblsearchbtn').show();
@@ -387,7 +403,7 @@
             url: '@Url.Content("~/Search/tranfer")',
             data: { prcname: str},
             dataType: "text",
-
+             
         });
 
 
