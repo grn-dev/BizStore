@@ -82,13 +82,13 @@
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
-                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        <li class="search"><a id="SearchId"><i class="fa fa-search"></i></a></li>
                         <li class="side-menu">
                             <a asp-action="index" asp-controller="cart">
-                                <i class="fas fa-amazon fa-shopping-cart" ></i>
+                                <i class="fas fa-amazon fa-shopping-cart"></i>
                                 @*<span class="badge">3</span>*@
-                                
-                                
+
+
                             </a>
                         </li>
                     </ul>
@@ -128,12 +128,13 @@
     </header>
     <!-- End Main Top -->
     <!-- Start Top Search -->
-    <div class="top-search">
+
+    <div class="top-search" style="display: none" id="tblsearchbtn">
         <div class="container">
             <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" class="form-control" placeholder="Search">
-                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+                <span class="input-group-addon"><i class="fa fa-search" onClick="srchfunction()"></i></span>
+                <input type="text" class="form-control" placeholder="Search" id="Serachtxt">
+
             </div>
         </div>
     </div>
@@ -177,9 +178,9 @@
     <div class="categories-shop">
         <div class="container">
             <div class="row">
-                  
-                 
-                 
+
+
+
             </div>
         </div>
     </div>
@@ -346,3 +347,53 @@
 </body>
 
 </html>
+
+
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+    });
+
+    $("#SearchId").click(function () {
+        console.log("Omad");
+        if ($('#tblsearchbtn').css('display') == 'none' || $('#tblsearchbtn').css("visibility") == "hidden") {
+
+            $('#tblsearchbtn').show();
+        } else {
+            $('#tblsearchbtn').hide();
+        }
+
+    });
+
+    function srchfunction() {
+           //val2 = ;
+        var str = $("#Serachtxt").val();
+        console.log(str);
+            $.ajax({
+            type: "POST",
+            @*//url: "@Url.Action("searchByname")",*@
+            url: '@Url.Content("~/Prouduct/searchByname")',
+                data: { prcname: str},
+            dataType: "text",
+            success: function (msg) {
+                alert(msg);
+            },
+            error: function (req, status, error) {
+                alert(error);
+                
+            }
+        });
+
+
+     }
+
+
+
+
+</script>

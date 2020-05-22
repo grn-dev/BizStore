@@ -27,6 +27,11 @@ namespace Infrastructures.Dal.Repository
 
         }
 
+        public List<Product> searchByname(string name)
+        {
+            return ctx.Products.Where(c=> c.Name.Contains(name)).ToList();
+        }
+
         public int TotalCount(string category = null)//page/4 ,categori
         {
             return ctx.Products.Where(c => string.IsNullOrWhiteSpace(category) || c.Category.CategoryName == category).Count();
