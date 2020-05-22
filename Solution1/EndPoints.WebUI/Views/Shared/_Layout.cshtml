@@ -133,8 +133,8 @@
         <div class="container">
             <div class="input-group">
                 <span class="input-group-addon">
-                    <a asp-action="Search" asp-controller="searchByname">
-                        
+                    <a onclick="srchfunction()">
+
                         <i class="fa fa-search"></i>
                     </a>
                 </span>
@@ -149,7 +149,7 @@
     <div id="slides-shop" class="cover-slides">
         <ul class="slides-container">
             <li class="text-left">
-                <img src="images/download_.jpg" alt="">
+                <img src="~/images/banner-01.jpg" alt="">
                 <div class="container">
                     <div class="row">
 
@@ -157,7 +157,7 @@
                 </div>
             </li>
             <li class="text-center">
-                <img src="images/download2.jpg" alt="">
+                <img src="~/images/banner-02.jpg" alt="">
                 <div class="container">
                     <div class="row">
 
@@ -165,7 +165,7 @@
                 </div>
             </li>
             <li class="text-right">
-                <img src="images/download _g.jpg" alt="">
+                <img src="~/images/banner-03.jpg" alt="">
                 <div class="container">
                     <div class="row">
 
@@ -337,7 +337,7 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/5c37fb7505.js" crossorigin="anonymous"></script>
+    <!--script src="https://kit.fontawesome.com/5c37fb7505.js" crossorigin="anonymous"></script> -->
     <!-- ALL PLUGINS -->
     <script src="js/jquery.superslides.min.js"></script>
     <script src="js/bootstrap-select.js"></script>
@@ -367,7 +367,7 @@
     });
 
     $("#SearchId").click(function () {
-        console.log("Omad");
+
         if ($('#tblsearchbtn').css('display') == 'none' || $('#tblsearchbtn').css("visibility") == "hidden") {
 
             $('#tblsearchbtn').show();
@@ -382,19 +382,25 @@
         var str = $("#Serachtxt").val();
         console.log(str);
             $.ajax({
-            type: "POST",
+            type: "Get",
             @*//url: "@Url.Action("searchByname")",*@
-            url: '@Url.Content("~/Search/searchByname")',
-                data: { prcname: str},
+            url: '@Url.Content("~/Search/tranfer")',
+            data: { prcname: str},
             dataType: "text",
-            success: function (msg) {
-                alert(msg);
-            },
-            error: function (req, status, error) {
-                alert(error);
 
-            }
         });
+
+
+    }
+
+
+
+    function srchfunction2() {
+        console.log("Omadرررر");
+
+        var str = $("#Serachtxt").val();
+        alert(str);
+
 
 
      }

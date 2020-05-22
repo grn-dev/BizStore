@@ -18,6 +18,7 @@ namespace EndPoints.WebUI.Controllers
         }
 
 
+         [HttpGet]
         public IActionResult searchByname(string prcname,int pn=1)
         {
             //?pn=2
@@ -42,7 +43,15 @@ namespace EndPoints.WebUI.Controllers
 
 
             return View(SeachView);
+            //return View("sabaliiiiii");
              
+        }
+
+        public IActionResult tranfer(string prcname, int pn = 1)
+        {
+
+            return RedirectToAction("searchByname", new { prcname = prcname });
+
         }
 
     }
