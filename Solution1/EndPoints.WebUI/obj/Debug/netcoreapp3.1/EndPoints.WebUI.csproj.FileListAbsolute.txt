@@ -191,3 +191,4 @@ D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\obj\Debug\netcoreapp3.1\Razo
 D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Payment\PaymentCompelete.cshtml.g.cs
 D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Payment\PaymentError.cshtml.g.cs
 D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Search\Default.cshtml.g.cs
+D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Search\searchByname.cshtml.g.cs

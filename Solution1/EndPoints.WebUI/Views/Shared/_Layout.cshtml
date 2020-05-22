@@ -132,7 +132,13 @@
     <div class="top-search" style="display: none" id="tblsearchbtn">
         <div class="container">
             <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-search" onClick="srchfunction()"></i></span>
+                <span class="input-group-addon">
+                    <a asp-action="Search" asp-controller="searchByname">
+                        
+                        <i class="fa fa-search"></i>
+                    </a>
+                </span>
+
                 <input type="text" class="form-control" placeholder="Search" id="Serachtxt">
 
             </div>
@@ -378,7 +384,7 @@
             $.ajax({
             type: "POST",
             @*//url: "@Url.Action("searchByname")",*@
-            url: '@Url.Content("~/Prouduct/searchByname")',
+            url: '@Url.Content("~/Search/searchByname")',
                 data: { prcname: str},
             dataType: "text",
             success: function (msg) {
@@ -386,7 +392,7 @@
             },
             error: function (req, status, error) {
                 alert(error);
-                
+
             }
         });
 

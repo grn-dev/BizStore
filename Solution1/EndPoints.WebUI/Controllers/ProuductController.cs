@@ -67,18 +67,7 @@ namespace EndPoints.WebUI.Controllers
             return View(prlvm);
         }
 
-        public IActionResult searchByname(string prcname)
-        {
-            //?pn=2
-            int showpage = 3;
-            var pr = RepoPrc.searchByname(prcname).ToList();
-
-             
-
-
-            return View(pr);
-        }
-
+       
 
 
     }

@@ -1,0 +1,62 @@
+﻿@model EndPoints.WebUI.Models.Search.SeachViewModel
+
+<div class="products-box">
+    <div class="container">
+
+        <div class="row special-list">
+
+            @foreach (var item in Model.Products)
+            {
+
+                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Sale</p>
+                            </div>
+                            <img src=@item.Image class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    @*<li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>*@
+                                </ul>
+                                <a class="cart" asp-action="AddToCart" asp-controller="Cart" asp-route-productId="@item.ProductID">Add to Cart</a>
+
+                                <form id="@item.ProductID" asp-action="AddToCart"
+                                      asp-controller="Cart" method="post">
+                                    <input type="hidden" name="productId" value="@item.ProductID" />
+                                    @*<input type="hidden" name="returnUrl"
+                                        value="@ViewContext.HttpContext.Request.PathAndQuery()" />*@
+                                    <button type="submit"
+                                            class="btn btn-success btn-sm pull-right" style="float:right">
+                                        Add To Cart
+                                    </button>
+
+                                </form>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                            <h4>@item.ProductID</h4>
+                            <h4>@item.Name</h4>
+                            <h5>@item.Price ریال</h5>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+
+        </div>
+
+         
+        <div>
+            @for (int gopagei = 1; gopagei <= Model.PagingInfo.TotalPages; gopagei++)
+            {
+                //string url = "page" + @gopagei;
+                var classname = gopagei == Model.PagingInfo.CurrentPage ? "btn-primary" : "btn-secondary";
+                <a asp-action="searchByname" asp-controller="Search" asp-route-pn="@gopagei" asp-route-prcname="@Model.PagingInfo.CurrentSreach" class="btn @classname"> @gopagei </a>
+            }
+        </div>
+         
+    </div>

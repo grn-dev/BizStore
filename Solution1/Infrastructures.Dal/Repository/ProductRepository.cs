@@ -26,15 +26,29 @@ namespace Infrastructures.Dal.Repository
                 Take(pageSize).ToList();
 
         }
+        public int TotalCount(string category = null)//page/4 ,categori
+        {
+            return ctx.Products.Where(c => string.IsNullOrWhiteSpace(category) || c.Category.CategoryName == category).Count();
+        }
+
 
         public List<Product> searchByname(string name)
         {
             return ctx.Products.Where(c=> c.Name.Contains(name)).ToList();
         }
 
-        public int TotalCount(string category = null)//page/4 ,categori
+        public int TotalCountSearch(string name)
         {
-            return ctx.Products.Where(c => string.IsNullOrWhiteSpace(category) || c.Category.CategoryName == category).Count();
+            return ctx.Products.Where(c => string.IsNullOrWhiteSpace(name) || c.Name.Contains(name)).Count();
+        }
+
+        public List<Product> GetProductsSearch(int pageSize = 4, int pageNumber = 1, string name = null)
+        {
+            return ctx.Products.
+                Where(c => string.IsNullOrWhiteSpace(name) || c.Name.Contains(name)).
+                Include(c => c.Category).
+                Skip(pageSize * (pageNumber - 1)).
+                Take(pageSize).ToList();
         }
 
         //public int TotalCount(string category)
