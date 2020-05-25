@@ -337,7 +337,7 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!--script src="https://kit.fontawesome.com/5c37fb7505.js" crossorigin="anonymous"></script> -->
+    <script src="https://kit.fontawesome.com/5c37fb7505.js" crossorigin="anonymous"></script>
     <!-- ALL PLUGINS -->
     <script src="js/jquery.superslides.min.js"></script>
     <script src="js/bootstrap-select.js"></script>
@@ -359,6 +359,8 @@
 
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 <script>
 
@@ -379,11 +381,11 @@
         $("h4").attr("dir", "rtl");
         $("h5").attr("dir", "rtl");
         $("h6").attr("dir", "rtl");
-         
+
     });
 
     $("#SearchId").click(function () {
-        
+
         if ($('#tblsearchbtn').css('display') == 'none' || $('#tblsearchbtn').css("visibility") == "hidden") {
 
             $('#tblsearchbtn').show();
@@ -394,18 +396,35 @@
     });
 
     function srchfunction() {
-           //val2 = ;
+        //val2 = ;
         var str = $("#Serachtxt").val();
         console.log(str);
-            $.ajax({
-            type: "Get",
-            @*//url: "@Url.Action("searchByname")",*@
-            url: '@Url.Content("~/Search/tranfer")',
-            data: { prcname: str},
-            dataType: "text",
-             
-        });
 
+
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Content("~/Search/searchByname")',
+            data: {
+                'prcname': str
+            }, // serializes the form's elements.
+            dataType: 'json',
+            success: function (data) {
+                alert(data); // show response from the php script.
+            },
+            error: function (data) {
+                alert("error===> " + data);
+                alert("responseJSON===> " + data.responseJSON);
+                alert("statusText===> " + data.statusText);
+                alert("responseText===> " + data.responseText);
+                
+                //alert("error===> " + data);
+                //alert("error===> " + data);
+                 
+                 
+                 
+            }
+        });
 
     }
 
@@ -419,7 +438,7 @@
 
 
 
-     }
+    }
 
 
 
