@@ -17,8 +17,8 @@ namespace EndPoints.WebUI.Controllers
             RepoPrc = pruduct;
         }
 
-
-        [HttpPost]
+         
+         
         public IActionResult searchByname(string prcname,int pn=1)
         {
             //?pn=2

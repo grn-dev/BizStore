@@ -133,9 +133,10 @@
         <div class="container">
             <div class="input-group">
                 <span class="input-group-addon">
-                    <a onclick="srchfunction()">
-
-                        <i class="fa fa-search"></i>
+                    <a  >
+                        @*onclick=" srchfunction()*@
+                        
+                        <i class="fa fa-search">@Html.ActionLink("","searchByname", "search", new { prcname = "c" })</i>
                     </a>
                 </span>
 
@@ -399,18 +400,21 @@
         //val2 = ;
         var str = $("#Serachtxt").val();
         console.log(str);
-
+         
 
 
         $.ajax({
-            type: "POST",
+            type: "post",
             url: '@Url.Content("~/Search/searchByname")',
             data: {
-                'prcname': str
+                prcname: str,
+                pn : 1
             }, // serializes the form's elements.
-            dataType: 'json',
+            dataType: "Html",
             success: function (data) {
-                alert(data); // show response from the php script.
+                $('#sagahsjsS').html(data);
+                alert("okkkkkkkkkkkk"+data); // show response from the php script.
+                console.log(data);
             },
             error: function (data) {
                 alert("error===> " + data);
@@ -421,6 +425,7 @@
                 //alert("error===> " + data);
                 //alert("error===> " + data);
                  
+
                  
                  
             }

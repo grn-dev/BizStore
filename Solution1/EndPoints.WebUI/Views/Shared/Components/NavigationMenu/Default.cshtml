@@ -1,40 +1,165 @@
 ﻿@model NavigationMenuViewModel
 
 <li class="dropdown megamenu-fw">
-        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
-        <ul class="dropdown-menu megamenu-content" role="menu">
-            <li>
-                <div class="row">
+    <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Product</a>
+    <ul class="dropdown-menu megamenu-content" role="menu">
+        <li>
+            <div class="row">
 
-                    @foreach (var item in Model.Categories)
-                    {
-                        var className = item.CategoryName == Model.CurentCategory ? "text-danger" : "";
+                @foreach (var item in Model.Categories)
+                {
+                    //var className = item.CategoryName == Model.CurentCategory ? "text-danger" : "";
+                    <div class="col-menu col-md-2">
+                        <h6 class="title">
+                            @if (item.parentId == null)
+                            {
+                                <a asp-action="Index" asp-controller="Category" asp-route-category="@item.CategoryName"
+                                   asp-route-pageNumber="1" class="list-group-item className">@item.CategoryName sub</a>
+                            }
 
-                        <a asp-action="Index" asp-controller="Category" asp-route-category="@item.CategoryName"
-                           asp-route-pageNumber="1" class="list-group-item className">@item.CategoryName sub</a>
-                         
-                        <div class="col-menu col-md-3">
-                            @*<h1 class="title">@item.CategoryName sub</h1>*@
-                            <div class="content">
-                                <ul class="menu-col">
-                                      
-                                      
+                        </h6>
+                        <div class="content">
+                            <ul class="menu-col">
 
-                                </ul>
-                            </div>
+                                @foreach (var item2 in Model.Categories)
+                                {
+                                    @if (item2.parentId == item.CategoryId)
+                                    {
+                                        <li>
+                                            <a asp-action="Index" asp-controller="Category" asp-route-category="@item.CategoryName"
+                                               asp-route-pageNumber="1" class="list-group-item className">@item.CategoryName ziiiirb</a>
+                                        </li>
+                                    }
+                                }
+
+
+                            </ul>
                         </div>
-                    }
+                    </div>
 
 
 
-                    <!-- end col-3 -->
-                    <!-- end col-3 -->
-                    <!-- end col-3 -->
-                </div>
-                <!-- end row -->
-            </li>
-        </ul>
-    </li>
+                }
 
 
-     
+                <!-- end col-3 -->
+                <!-- end col-3 -->
+                <!-- end col-3 -->
+            </div>
+            <!-- end row -->
+        </li>
+    </ul>
+</li>
+
+
+
+
+<script>
+
+    $(document).ready(function () {
+
+
+        $("a").attr("dir", "rtl");
+        $("div").attr("dir", "rtl");
+        $("p").attr("dir", "rtl");
+        $("footer").attr("dir", "rtl");
+        $("ui").attr("dir", "rtl");
+        $("li").attr("dir", "rtl");
+        $("img").attr("dir", "rtl");
+        $("button").attr("dir", "rtl");
+        $("nav").attr("dir", "rtl");
+
+        $("h1").attr("dir", "rtl");
+        $("h2").attr("dir", "rtl");
+        $("h3").attr("dir", "rtl");
+        $("h4").attr("dir", "rtl");
+        $("h5").attr("dir", "rtl");
+        $("h6").attr("dir", "rtl");
+    });
+
+    $("#SearchId").click(function () {
+
+        if ($('#tblsearchbtn').css('display') == 'none' || $('#tblsearchbtn').css("visibility") == "hidden") {
+
+            $('#tblsearchbtn').show();
+        } else {
+            $('#tblsearchbtn').hide();
+        }
+
+    });
+
+    function srchfunction() {
+        //val2 = ;
+        var str = $("#Serachtxt").val();
+        console.log(str);
+
+
+
+        $.ajax({
+            type: "post",
+            url: '@Url.Content("~/Search/searchByname")',
+            data: {
+                prcname: str,
+                pn : 1
+            }, // serializes the form's elements.
+            dataType: "Html",
+            success: function (data) {
+                $('#sagahsjsS').html(data);
+                alert("okkkkkkkkkkkk"+data); // show response from the php script.
+                console.log(data);
+            },
+            error: function (data) {
+                alert("error===> " + data);
+                alert("responseJSON===> " + data.responseJSON);
+                alert("statusText===> " + data.statusText);
+                alert("responseText===> " + data.responseText);
+
+                //alert("error===> " + data);
+                //alert("error===> " + data);
+
+
+
+
+            }
+        });
+
+    }
+
+
+
+    function srchfunction2() {
+        console.log("Omadرررر");
+
+        var str = $("#Serachtxt").val();
+        alert(str);
+
+
+
+    }
+
+
+
+
+</script>
+
+
+<style>
+    .line {
+        display: block;
+        height: 5px;
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 1em 0;
+        padding: 0;
+    }
+
+    hr.new1 {
+        border: 1px solid red;
+    }
+
+    hr.new3 {
+        border: 10px solid green;
+        border-radius: 5px;
+    }
+</style>
+
