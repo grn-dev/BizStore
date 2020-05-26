@@ -14,5 +14,9 @@ namespace Core.Contract
         int TotalCountSearch(string name);
         List<Product> GetProductsSearch(int pageSize = 4, int pageNumber = 1, string name = null);//string category,
 
+        ////
+        List<Product> GetReletionPruduct(Product prcID);
+
+
     }
 }

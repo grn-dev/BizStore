@@ -25,9 +25,12 @@
                                 {
                                     @if (item2.parentId == item.CategoryId)
                                     {
+
                                         <li>
                                             <a asp-action="Index" asp-controller="Category" asp-route-category="@item.CategoryName"
-                                               asp-route-pageNumber="1" class="list-group-item className">@item.CategoryName ziiiirb</a>
+                                               asp-route-pageNumber="1">
+                                                @item.CategoryName ziiiirb
+                                            </a>
                                         </li>
                                     }
                                 }

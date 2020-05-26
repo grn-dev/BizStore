@@ -51,6 +51,12 @@ namespace Infrastructures.Dal.Repository
                 Take(pageSize).ToList();
         }
 
+        public List<Product> GetReletionPruduct(Product prc)
+        {
+            //return ctx.Products.ToList();
+            return ctx.Products.Where(c=> c.CategoryId == prc.ProductID).ToList();
+        }
+
         //public int TotalCount(string category)
         //{
         //    throw new NotImplementedException();
