@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Core.Contract;
+using EndPoints.WebUI.Models.Producte;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 
@@ -14,9 +15,11 @@ namespace EndPoints.WebUI.Controllers
     {
         public string categori_name { get; set; }
         private readonly ICategoriRepo CategoryRepo;
-        public CategoryController(ICategoriRepo ctx)
+        private readonly IPruductRepo RepoPrc;
+        public CategoryController(ICategoriRepo ctx, IPruductRepo pruduct)
         {
             CategoryRepo = ctx;
+            RepoPrc = pruduct;
         }
         // GET: /<controller>/
         public IActionResult Index(string category)
@@ -29,6 +32,33 @@ namespace EndPoints.WebUI.Controllers
             int showpage = 3;
             return RedirectToAction("Index", "Prouduct", new { @catname = categori_name, @pn=1 }); 
              
+        }
+
+
+        //[HttpGet]
+        //[Route("{catname}/PageR{pn:int}")]
+        //[Route("{catname}/PageR{pn:int}")]
+        public IActionResult list(string catname2, int pn = 1)
+        {
+            //?pn=2
+            int showpage = 19;
+            var pr = RepoPrc.GetProducts(showpage, pn, catname2).ToList();
+
+            ProductsListViewModel prlvm = new ProductsListViewModel()
+            {
+                Products = pr,
+                PagingInfo = new Models.Commons.PagingInfo
+                {
+                    CurrentPage = pn,
+                    TotalItems = RepoPrc.TotalCount(catname2),
+                    ItemsPerPage = showpage
+
+                },
+                CurrentCategory = catname2
+            };
+
+
+            return View(prlvm);
         }
     }
 }

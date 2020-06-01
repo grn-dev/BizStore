@@ -19,12 +19,17 @@ namespace EndPoints.WebUI.Controllers
             RepoPrc = pruduct;
         }
 
-         
 
-        public IActionResult index(string catname,int pn = 1)
+
+        ///[Route("{xCoordinate}/{yCoordinate}")]
+        //"{controller=Prouduct}/{action=Index}/{catname}/Page{pn:int}",
+        //"{catname}/Page{pn:int}"
+        //[HttpGet]
+        //[Route("{catname}/PageR{pn:int}")]
+        public IActionResult index(string catname, int pn = 1)
         {
             //?pn=2
-            int showpage = 3;
+            int showpage = 4;
             var pr = RepoPrc.GetProducts(showpage, pn, catname).ToList();
 
             ProductsListViewModel prlvm = new ProductsListViewModel()
@@ -37,7 +42,7 @@ namespace EndPoints.WebUI.Controllers
                     ItemsPerPage = showpage
 
                 },
-                CurrentCategory= catname
+                CurrentCategory = catname
             };
 
 

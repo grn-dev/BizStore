@@ -1,21 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Core.Domian;
-using System.Threading.Tasks;
 using Core.Contract;
+using EndPoints.WebUI.Models.Carts;
 using Infrastructures.Dal;
 using Infrastructures.Dal.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using EndPoints.WebUI.Models.Carts;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Service.AppService;
 
 namespace EndPoints.WebUI
@@ -80,12 +73,12 @@ namespace EndPoints.WebUI
                 endpoints.MapControllerRoute(
                 name: null,
                 pattern: "{catname}/Page{pn:int}",
-                defaults: new { controller = "Prouduct", action = "index" }
+                defaults: new { controller = "Prouduct", action = "Index" }
                 );
 
 
                 endpoints.MapControllerRoute(
-                name: "default",
+                name: "default2",
                 pattern: "Page{pn:int}",
                 defaults: new {
                     controller = "Prouduct",
