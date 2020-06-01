@@ -18,7 +18,7 @@ namespace EndPoints.WebUI.Controllers
         }
 
          
-         
+         [HttpPost]
         public IActionResult searchByname(string prcname,int pn=1)
         {
             //?pn=2
