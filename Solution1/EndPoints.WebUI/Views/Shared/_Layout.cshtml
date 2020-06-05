@@ -21,6 +21,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/Slider.css">
     <!-- Site CSS -->
     <link rel="stylesheet" href="~/css/style.css">
     <!-- Responsive CSS -->
@@ -35,8 +36,18 @@
     <script language="JavaScript" type="text/javascript" src="~/js/jquery-ui-personalized-1.5.2.packed.js"></script>
     <script language="JavaScript" type="text/javascript" src="~/js/sprinkle.js"></script>
 
+    <script src="~/js/Slider.js"></script>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="~/css/font.css">
+    <link rel="stylesheet" href="~/fonts/Pacifico-Regular.ttf">
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -59,9 +70,9 @@
                 <!-- End Header Navigation -->
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
-                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp"><p></p>
+                        <li class="nav-item active"><a class="nav-link" href="index.html"><p>خانه</p></a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html"><p>درباره ما</p></a></li>
 
                         @*Categori*@
 
@@ -69,18 +80,18 @@
 
 
 
-                        <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                                <li><a href="shop-detail.html">Shop Detail</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="service.html">Our Service</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                        @*<li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="cart.html">Cart</a></li>
+                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="my-account.html">My Account</a></li>
+                                    <li><a href="wishlist.html">Wishlist</a></li>
+                                    <li><a href="shop-detail.html">Shop Detail</a></li>
+                                </ul>
+                            </li>*@
+
+                        <li class="nav-item"><a class="nav-link" href="contact-us.html"><p>تماس باما</p></a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -138,8 +149,8 @@
         <div class="container">
             <div class="input-group">
                 <span class="input-group-addon">
-                    <a class="fa fa-search" onclick=" srchfunction()" >
-                        
+                    <a class="fa fa-search" onclick=" srchfunction()">
+
 
                     </a>
                 </span>
@@ -342,8 +353,9 @@
     <script src="~/js/jquery-3.2.1.min.js"></script>
     <script src="~/js/popper.min.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/5c37fb7505.js" crossorigin="anonymous"></script>
+    @*<script src="https://kit.fontawesome.com/5c37fb7505.js" crossorigin="anonymous"></script>*@
     <!-- ALL PLUGINS -->
+    <script src="~/js/fontsweesome.js"></script>
     <script src="~/js/jquery.superslides.min.js"></script>
     <script src="~/js/bootstrap-select.js"></script>
     <script src="~/js/inewsticker.js"></script>
@@ -367,9 +379,9 @@
 <script>
 
     $(document).ready(function () {
-         
+
         $("div").attr("dir", "rtl");
-         
+
     });
 
     $("#SearchId").click(function () {
@@ -411,11 +423,11 @@
             }, // serializes the form's elements.
             dataType: "text",
             success: function (data) {
-                 
+
                 console.log(data);
             },
             error: function (data) {
-                
+
             }
         });*@
 
@@ -437,3 +449,6 @@
 
 
 </script>
+
+
+ 

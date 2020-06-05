@@ -9,8 +9,8 @@ using EndPoints.WebUI.Models.Carts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
-using  EndPoints.WebUI.Infrastructures;
-using  EndPoints.WebUI.Models.Carts;
+using EndPoints.WebUI.Infrastructures;
+using EndPoints.WebUI.Models.Carts;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
