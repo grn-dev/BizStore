@@ -1,0 +1,26 @@
+﻿@model List<Core.Domian.OrderHeader>
+
+
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>شماره فاکتور</th>
+        <th>نام</th>
+        <th>شهر </th>
+        <th>استان</th>
+        <th>شماره همراه</th>
+        <th>قیمت</th>
+        <th>عملیات</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.OrderID</td>
+            <td>@item.Name</td>
+            <td>@item.City</td>
+            <td>@item.province</td>
+            <td>@item.Phonenumber</td>
+            <td>@item.TotalPrice.ToString("c")</td>
+            <td><a class="btn btn-info" asp-action="ViewDetail" asp-controller="View" asp-route-id="@item.OrderID">مشاهده جزییات</a></td>
+        </tr>
+    }
+</table>

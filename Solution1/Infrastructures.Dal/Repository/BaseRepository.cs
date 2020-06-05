@@ -16,7 +16,9 @@ namespace Infrastructures.Dal.Repository
 
         public TEntity Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            ctx.Set<TEntity>().Add(entity);
+            ctx.SaveChanges();
+            return entity;
         }
 
         public void Delete(int id)

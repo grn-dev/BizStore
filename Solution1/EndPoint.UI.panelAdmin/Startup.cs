@@ -2,9 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.Contract;
+using Infrastructures.Dal;
+using Infrastructures.Dal.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +28,12 @@ namespace EndPoint.UI.panelAdmin
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<BizContext>(options => options.UseSqlServer
+            (Configuration.GetConnectionString("storeDb")));
+            services.AddScoped<IOrderRepo, OrderRepository>();
+
+            services.AddScoped<IPruductRepo, ProductRepository>();
+            services.AddScoped<ICategoriRepo, CategoriRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +60,7 @@ namespace EndPoint.UI.panelAdmin
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=View}/{action=ViewAllOrder}/{id?}");
             });
         }
     }

@@ -1,0 +1,50 @@
+﻿@model Core.Domian.Order
+<table>
+    <tr><th>شماره فاکتور:   </th><td> @Model.OrderID</td></tr>
+
+    <tr><th>آدرس:   </th><td>@Model.Addres</td></tr>
+     
+    <tr><th>آدرس2:  </th><td>@Model.Addres2</td></tr>
+     
+    <tr><th>تاریخ پرداخت:   </th><td>@Model?.PaymentDate?.ToString("yyyy-mm-dd")</td></tr>
+    
+    @*<tr><th>PaymentId:</th><td>@Model?.PaymentId</td></tr>*@
+</table>
+
+<hr />
+<table class="table table-bordered table-striped  table-dark">
+    <thead>
+        <tr>
+            <th>نام کالا</th>
+            <th>تعداد</th>
+
+            <th class="text-right">قیمت</th>
+            <th class="text-right">قیمت نهایی کالا</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var line in Model.Lines)
+        {
+            <tr>
+                <td class="text-left">@line.Product.Name</td>
+                <td class="text-center">@line.Quantity</td>
+
+                <td class="text-right">@line.Product.Price.ToString("c")</td>
+                <td class="text-right">
+                    @((line.Quantity * line.Product.Price).ToString("c"))
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<hr />
+@if (@Model.Shipped==false)
+{
+    <form asp-action="Ship" asp-controller="View">
+        <input type="hidden" value="@Model.OrderID" name="id" />
+        <input type="submit" value="ارسال" class="btn btn-danger" />
+
+    </form>
+}
+<a asp-action="ViewAllOrder" asp-controller="View" style="margin-top:10px" class="btn btn-info">بازگشت</a>

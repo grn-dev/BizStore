@@ -38,13 +38,11 @@ namespace Infrastructures.Dal.Repository
                 {
                     City = c.City,
                     //State = c.State,
-                    Shipped = c.Shipped,
-                   // Line1 = c.Line1,
-                    Name = c.Name,
-                    OrderID = c.OrderID,
-                    PaymentId = c.PaymentId,
-                    TotalPrice = c.Lines.Sum(d => d.Product.Price),
-                    PaymentDate = c.PaymentDate,
+                     Name=c.Name+" "+c.lasteName,
+                     OrderID=c.OrderID,
+                     Phonenumber=c.Phonenumber,
+                     province=c.province,
+                     TotalPrice= c.Lines.Sum(d => d.Product.Price),
 
                 }).ToList();
             return orders;
