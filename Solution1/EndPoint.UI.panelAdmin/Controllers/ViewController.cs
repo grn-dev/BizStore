@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core.Contract;
 using Core.Domian;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EndPoint.UI.panelAdmin.Controllers
 {
+    [Authorize]
     public class ViewController : Controller
     {
 
