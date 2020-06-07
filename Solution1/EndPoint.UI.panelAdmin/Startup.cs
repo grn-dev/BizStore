@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Core.Contract;
+using EndPoint.UI.panelAdmin.Models.Account;
 using Infrastructures.Dal;
 using Infrastructures.Dal.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,9 +33,15 @@ namespace EndPoint.UI.panelAdmin
             services.AddDbContext<BizContext>(options => options.UseSqlServer
             (Configuration.GetConnectionString("storeDb")));
             services.AddScoped<IOrderRepo, OrderRepository>();
-
             services.AddScoped<IPruductRepo, ProductRepository>();
             services.AddScoped<ICategoriRepo, CategoriRepo>();
+
+            services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("storeUserDb")));
+            services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<AppIdentityDbContext>()
+            .AddDefaultTokenProviders();
+
+             
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +63,7 @@ namespace EndPoint.UI.panelAdmin
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

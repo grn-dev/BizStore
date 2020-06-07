@@ -40,6 +40,8 @@ namespace EndPoints.WebUI
             services.AddScoped<IOrderRepo, OrderRepository>();
             services.AddScoped<ICategoriRepo, CategoriRepo>();
             services.AddScoped<IPayment, payService>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
