@@ -6,6 +6,7 @@ using Core.Contract;
 using EndPoint.UI.panelAdmin.Models.Account;
 using Infrastructures.Dal;
 using Infrastructures.Dal.Repository;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -37,11 +38,37 @@ namespace EndPoint.UI.panelAdmin
             services.AddScoped<ICategoriRepo, CategoriRepo>();
 
             services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("storeUserDb")));
-            services.AddIdentity<IdentityUser, IdentityRole>()
-            .AddEntityFrameworkStores<AppIdentityDbContext>()
+
+            //services.AddIdentity<IdentityUser, IdentityRole>()
+            //.AddEntityFrameworkStores<AppIdentityDbContext>()
+            //.AddDefaultTokenProviders();
+
+
+            services.AddIdentity<IdentityUser, IdentityRole>(c => {
+
+                c.Password.RequireDigit = false;
+                c.Password.RequiredLength = 5;
+                c.Password.RequireNonAlphanumeric = false;
+                //c.Password.RequireNonLetterOrDigi = false;
+
+                c.Password.RequireUppercase = false;
+                c.Password.RequireLowercase = false;
+
+
+            }).AddEntityFrameworkStores<AppIdentityDbContext>()
+            //.AddUserStore<AppIdentityDbContext>()
+            //.AddRoleStore<AppIdentityDbContext>()
+            //.AddUserManager<AppIdentityDbContext>()
+            //.AddRoleManager<AppIdentityDbContext>()
             .AddDefaultTokenProviders();
 
-             
+            //services.UseCookieAuthentic
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+           .AddCookie();
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,11 +87,14 @@ namespace EndPoint.UI.panelAdmin
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+
             app.UseRouting();
 
             app.UseAuthorization();
             app.UseAuthentication();
-
+            //app.UseCookieAuthenticati
+                
+           
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

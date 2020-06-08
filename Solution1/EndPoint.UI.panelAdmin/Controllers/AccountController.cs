@@ -24,17 +24,19 @@ namespace EndPoint.UI.panelAdmin.Controllers
         [AllowAnonymous]
         public IActionResult AddUser(string userName, string password)//view result
         {
+            userName = "sabzali";
+            password = "123456aA";
             var user = new IdentityUser(userName);
             var res = userManager.CreateAsync(user, password).Result;
             var ss = res.Succeeded;
             return RedirectToAction("Login");
         }
         [AllowAnonymous]
-        public ViewResult Login(string returnUrl)
+        public ViewResult Login()
         {
             return View(new LoginModel
             {
-                ReturnUrl = returnUrl
+                //ReturnUrl = returnUrl
             });
         }
         [HttpPost]
@@ -51,7 +53,9 @@ namespace EndPoint.UI.panelAdmin.Controllers
                     await signInManager.SignOutAsync();
                     if ((await signInManager.PasswordSignInAsync(user, loginModel.Password, false, false)).Succeeded)
                     {
-                        return Redirect(loginModel?.ReturnUrl ?? "/Admin/Index");
+
+                        //return Redirect(loginModel?.ReturnUrl ?? "/View/Index");
+                        return RedirectToAction("Add", "Product");
                     }
                 }
             }
