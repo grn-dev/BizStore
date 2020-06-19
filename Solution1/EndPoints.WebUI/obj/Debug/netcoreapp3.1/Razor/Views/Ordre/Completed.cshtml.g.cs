@@ -35,13 +35,20 @@ using EndPoints.WebUI.Models.Producte;
 #nullable disable
 #nullable restore
 #line 4 "D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\Views\_ViewImports.cshtml"
+using Core.Domian;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\Views\_ViewImports.cshtml"
 using EndPoints.WebUI.Models.Categories;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2cea6817c03b12a2ea04b25e1b3f506a65b8bdce", @"/Views/Ordre/Completed.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"062286973dfc7c644e884ed73ff7051c8d0aaa02", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cb845d4358b74c1d6a50dc96745c7cc18885b314", @"/Views/_ViewImports.cshtml")]
     public class Views_Ordre_Completed : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Core.Domian.Order>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "RequestPayment", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -97,7 +104,7 @@ using EndPoints.WebUI.Models.Categories;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n    </tr>\r\n</table>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2cea6817c03b12a2ea04b25e1b3f506a65b8bdce5432", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2cea6817c03b12a2ea04b25e1b3f506a65b8bdce5610", async() => {
                 WriteLiteral("\r\n    <input type=\"hidden\"");
                 BeginWriteAttribute("value", " value=\"", 402, "\"", 424, 1);
 #nullable restore

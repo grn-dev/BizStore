@@ -35,13 +35,20 @@ using EndPoints.WebUI.Models.Producte;
 #nullable disable
 #nullable restore
 #line 4 "D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\Views\_ViewImports.cshtml"
+using Core.Domian;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\Views\_ViewImports.cshtml"
 using EndPoints.WebUI.Models.Categories;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"68e922de900be5b17f3eba4d182e1d96d2bac2b3", @"/Views/Category/list.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"062286973dfc7c644e884ed73ff7051c8d0aaa02", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cb845d4358b74c1d6a50dc96745c7cc18885b314", @"/Views/_ViewImports.cshtml")]
     public class Views_Category_list : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ProductsListViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("cart"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -108,7 +115,7 @@ WriteAttributeValue("", 565, item.Image, 565, 11, false);
                                     <li><a href=""#"" data-toggle=""tooltip"" data-placement=""right"" title=""View""><i class=""fas fa-eye""></i></a></li>
 ");
             WriteLiteral("                                </ul>\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68e922de900be5b17f3eba4d182e1d96d2bac2b37114", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68e922de900be5b17f3eba4d182e1d96d2bac2b37292", async() => {
                 WriteLiteral("Add to Cart");
             }
             );
@@ -142,7 +149,7 @@ WriteAttributeValue("", 565, item.Image, 565, 11, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68e922de900be5b17f3eba4d182e1d96d2bac2b39690", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68e922de900be5b17f3eba4d182e1d96d2bac2b39868", async() => {
                 WriteLiteral("\r\n                                    <input type=\"hidden\" name=\"productId\"");
                 BeginWriteAttribute("value", " value=\"", 1587, "\"", 1610, 1);
 #nullable restore
@@ -234,7 +241,7 @@ AddHtmlAttributeValue("", 1397, item.ProductID, 1397, 15, false);
 #line hidden
 #nullable disable
             WriteLiteral("                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68e922de900be5b17f3eba4d182e1d96d2bac2b314493", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68e922de900be5b17f3eba4d182e1d96d2bac2b314671", async() => {
                 WriteLiteral(" ");
 #nullable restore
 #line 57 "D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\Views\Category\list.cshtml"

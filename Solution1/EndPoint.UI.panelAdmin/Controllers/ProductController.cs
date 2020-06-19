@@ -33,6 +33,7 @@ namespace EndPoint.UI.panelAdmin.Controllers
             return View(products);
         }
 
+        //[AllowAnonymous]
         public IActionResult Add()
         {
             AddProductViewModel model = new AddProductViewModel

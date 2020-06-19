@@ -20,7 +20,7 @@ namespace EndPoints.WebUI.Controllers
 
          
 
-        public IActionResult Index(int pn=1)
+        public IActionResult Index23(int pn=1)
         {
             var pr=RepoPrc.GetProducts(4, pn,"");
             var fg = pr.ToList();
@@ -28,6 +28,12 @@ namespace EndPoints.WebUI.Controllers
  
         }
 
+
+        public IActionResult Index()
+        {
+            var allp = RepoPrc.GetProductByGategoriMainPage("compiter");
+            return View(allp);
+        }
         public IActionResult Privacy()
         {
             return View();

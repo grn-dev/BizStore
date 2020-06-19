@@ -35,13 +35,20 @@ using EndPoints.WebUI.Models.Producte;
 #nullable disable
 #nullable restore
 #line 4 "D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\Views\_ViewImports.cshtml"
+using Core.Domian;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\Views\_ViewImports.cshtml"
 using EndPoints.WebUI.Models.Categories;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"abe26414ca9db252104bf1a719874dddbbd9b39a", @"/Views/Shared/Components/NavigationMenu/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"062286973dfc7c644e884ed73ff7051c8d0aaa02", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cb845d4358b74c1d6a50dc96745c7cc18885b314", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_NavigationMenu_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<NavigationMenuViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -83,7 +90,7 @@ using EndPoints.WebUI.Models.Categories;
 #line hidden
 #nullable disable
             WriteLiteral("                    <div class=\"col-menu col-md-2\">\r\n                        <h6 class=\"title\">\r\n                             \r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "abe26414ca9db252104bf1a719874dddbbd9b39a5727", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "abe26414ca9db252104bf1a719874dddbbd9b39a5905", async() => {
 #nullable restore
 #line 16 "D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\Views\Shared\Components\NavigationMenu\Default.cshtml"
                                                                                  Write(item.CategoryName);

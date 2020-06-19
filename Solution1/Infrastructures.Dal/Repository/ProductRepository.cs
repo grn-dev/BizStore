@@ -58,6 +58,11 @@ namespace Infrastructures.Dal.Repository
             return ctx.Products.Take(6).ToList();
         }
 
+        public List<Product> GetProductByGategoriMainPage(string categoriName)
+        {
+            return ctx.Products.Where(c=> c.Category.CategoryName== categoriName).Take(6).ToList();
+        }
+
         //public int TotalCount(string category)
         //{
         //    throw new NotImplementedException();

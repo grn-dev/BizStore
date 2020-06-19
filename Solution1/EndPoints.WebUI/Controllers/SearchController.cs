@@ -19,9 +19,9 @@ namespace EndPoints.WebUI.Controllers
 
          
          [HttpPost]
-        public IActionResult searchByname(string prcname,int pn=1)
+        public IActionResult searchByname(string prcname)//,int pn=1)
         {
-            //?pn=2
+            int pn = 1;
             int showpage = 3;
             var Allprbysearch = RepoPrc.GetProductsSearch(showpage, pn, prcname).ToList();
              
@@ -46,6 +46,7 @@ namespace EndPoints.WebUI.Controllers
             //return View("sabaliiiiii");
              
         }
+
 
         public IActionResult tranfer(string prcname, int pn = 1)
         {

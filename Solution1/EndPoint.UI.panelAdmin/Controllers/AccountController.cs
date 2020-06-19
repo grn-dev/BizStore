@@ -39,6 +39,7 @@ namespace EndPoint.UI.panelAdmin.Controllers
                 //ReturnUrl = returnUrl
             });
         }
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -53,9 +54,8 @@ namespace EndPoint.UI.panelAdmin.Controllers
                     await signInManager.SignOutAsync();
                     if ((await signInManager.PasswordSignInAsync(user, loginModel.Password, false, false)).Succeeded)
                     {
-
-                        //return Redirect(loginModel?.ReturnUrl ?? "/View/Index");
-                        return RedirectToAction("Add", "Product");
+                        //return RedirectToAction("Add", "Product");
+                        var t=Response.Headers;
                     }
                 }
             }
