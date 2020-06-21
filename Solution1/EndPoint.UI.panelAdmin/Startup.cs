@@ -50,8 +50,10 @@ namespace EndPoint.UI.panelAdmin
             //services.Add<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
             //    .AddEntityFrameworkStores<AppIdentityDbContext>();
 
+              
 
-            services.AddIdentity<IdentityUser, IdentityRole>(c =>
+
+            services.AddIdentity<Appuser, IdentityRole>(c =>
             {
 
                 c.Password.RequireDigit = false;
@@ -63,6 +65,8 @@ namespace EndPoint.UI.panelAdmin
 
             }).AddEntityFrameworkStores<AppIdentityDbContext>()
             .AddDefaultTokenProviders();
+
+            //services.AddRazorPages();
 
 
 
@@ -84,19 +88,21 @@ namespace EndPoint.UI.panelAdmin
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            
+
+
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
 
             app.UseRouting();
 
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
             //app.UseCookieAuthenticati
             app.UseSession();
 
-
+             
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

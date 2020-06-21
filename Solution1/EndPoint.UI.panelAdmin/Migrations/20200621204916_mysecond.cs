@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EndPoint.UI.panelAdmin.Migrations
 {
-    public partial class init : Migration
+    public partial class mysecond : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

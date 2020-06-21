@@ -205,7 +205,7 @@ D:\Git myproject\BizStore\Solution1\EndPoint.UI.panelAdmin\bin\Debug\netcoreapp3
 D:\Git myproject\BizStore\Solution1\EndPoint.UI.panelAdmin\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 D:\Git myproject\BizStore\Solution1\EndPoint.UI.panelAdmin\bin\Debug\netcoreapp3.1\System.CodeDom.dll
 D:\Git myproject\BizStore\Solution1\EndPoint.UI.panelAdmin\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Git myproject\BizStore\Solution1\EndPoint.UI.panelAdmin\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 D:\Git myproject\BizStore\Solution1\EndPoint.UI.panelAdmin\obj\Debug\netcoreapp3.1\EndPoint.UI.panelAdmin.csproj.CoreCompileInputs.cache
 D:\Git myproject\BizStore\Solution1\EndPoint.UI.panelAdmin\obj\Debug\netcoreapp3.1\EndPoint.UI.panelAdmin.MvcApplicationPartsAssemblyInfo.cs
 D:\Git myproject\BizStore\Solution1\EndPoint.UI.panelAdmin\obj\Debug\netcoreapp3.1\EndPoint.UI.panelAdmin.MvcApplicationPartsAssemblyInfo.cache
-D:\Git myproject\BizStore\Solution1\EndPoint.UI.panelAdmin\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
