@@ -209,3 +209,6 @@ D:\Git myproject\BizStore\Solution1\EndPoint.UI.panelAdmin\obj\Debug\netcoreapp3
 D:\Git myproject\BizStore\Solution1\EndPoint.UI.panelAdmin\obj\Debug\netcoreapp3.1\EndPoint.UI.panelAdmin.csproj.CoreCompileInputs.cache
 D:\Git myproject\BizStore\Solution1\EndPoint.UI.panelAdmin\obj\Debug\netcoreapp3.1\EndPoint.UI.panelAdmin.MvcApplicationPartsAssemblyInfo.cs
 D:\Git myproject\BizStore\Solution1\EndPoint.UI.panelAdmin\obj\Debug\netcoreapp3.1\EndPoint.UI.panelAdmin.MvcApplicationPartsAssemblyInfo.cache
+D:\Git myproject\BizStore\Solution1\EndPoint.UI.panelAdmin\bin\Debug\netcoreapp3.1\Microsoft.Owin.dll
+D:\Git myproject\BizStore\Solution1\EndPoint.UI.panelAdmin\bin\Debug\netcoreapp3.1\Microsoft.Owin.Host.SystemWeb.dll
+D:\Git myproject\BizStore\Solution1\EndPoint.UI.panelAdmin\bin\Debug\netcoreapp3.1\Owin.dll

@@ -43,7 +43,7 @@ namespace EndPoint.UI.panelAdmin.Controllers
             return View(model);
         }
 
-
+         
 
         [HttpPost]
         public IActionResult Add(AddProductViewModel model)

@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Owin.Host.SystemWeb;
 
 namespace EndPoint.UI.panelAdmin.Controllers
 {
@@ -91,19 +92,14 @@ namespace EndPoint.UI.panelAdmin.Controllers
             ModelState.AddModelError("", "Invalid name or password");
             return View(loginModel);
         }
-        public async Task<RedirectResult> Logout(string returnUrl = "/")
-        {
-            await signInManager.SignOutAsync();
-            return Redirect(returnUrl);
-        }
+         
 
-        public IActionResult Add()
+        public IActionResult Logout()
         {
-            AddProductViewModel model = new AddProductViewModel
-            {
-                //CategoryForDisplay = categoryRepository.GetAll().ToList()
-            };
-            return View(model);
+            signInManager.SignOutAsync();
+            return View("Login");
         }
     }
 }
+ 
+
