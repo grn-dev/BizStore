@@ -196,3 +196,5 @@ D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\obj\Debug\netcoreapp3.1\Razo
 D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Category\list.cshtml.g.cs
 D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_footer.cshtml.g.cs
 D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Home\_footer.cshtml.g.cs
+D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Home\_slider3.cshtml.g.cs
+D:\Git myproject\BizStore\Solution1\EndPoints.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Home\_slider4.cshtml.g.cs
